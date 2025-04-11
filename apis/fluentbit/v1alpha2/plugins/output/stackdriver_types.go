@@ -49,6 +49,8 @@ type Stackdriver struct {
 	TagPrefix string `json:"tagPrefix,omitempty"`
 	// Specify the key that contains the severity information for the logs
 	SeverityKey string `json:"severityKey,omitempty"`
+	// The value of this field is used by the Stackdriver output plugin to find the gcp project id from jsonPayload
+	ProjectIdKey string `json:"projectIdKey,omitempty"`
 	// Rewrite the trace field to be formatted for use with GCP Cloud Trace
 	AutoformatStackdriverTrace *bool `json:"autoformatStackdriverTrace,omitempty"`
 	// Number of dedicated threads for the Stackdriver Output Plugin
@@ -57,6 +59,10 @@ type Stackdriver struct {
 	CustomK8sRegex string `json:"customK8sRegex,omitempty"`
 	// Optional list of comma seperated strings. Setting these fields overrides the Stackdriver monitored resource API values
 	ResourceLabels []string `json:"resourceLabels,omitempty"`
+	//Set payload compression mechanism. The only available option is gzip. Default = "", which means no compression.
+	Compress string `json:"compress,omitempty"`
+	// Set the base Cloud Logging API URL to use for the /v2/entries:write API request
+	CloudLoggingBaseUrl string `json:"cloudLoggingBaseUrl,omitempty"`
 }
 
 // Name implement Section() method
@@ -129,6 +135,9 @@ func (o *Stackdriver) Params(sl plugins.SecretLoader) (*params.KVs, error) {
 	if o.SeverityKey != "" {
 		kvs.Insert("severity_key", o.SeverityKey)
 	}
+	if o.ProjectIdKey != "" {
+		kvs.Insert("project_id_key", o.ProjectIdKey)
+	}
 	if o.AutoformatStackdriverTrace != nil {
 		kvs.Insert("autoformat_stackdriver_trace", fmt.Sprint(*o.AutoformatStackdriverTrace))
 	}
@@ -140,6 +149,12 @@ func (o *Stackdriver) Params(sl plugins.SecretLoader) (*params.KVs, error) {
 	}
 	if o.ResourceLabels != nil && len(o.ResourceLabels) > 0 {
 		kvs.Insert("resource_labels", strings.Join(o.ResourceLabels, ","))
+	}
+	if o.Compress != "" {
+		kvs.Insert("compress", o.Compress)
+	}
+	if o.CloudLoggingBaseUrl != "" {
+		kvs.Insert("cloud_logging_base_url", o.CloudLoggingBaseUrl)
 	}
 	return kvs, nil
 }
