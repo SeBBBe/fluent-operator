@@ -3,7 +3,7 @@ package plugins
 import (
 	"encoding/json"
 
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/params"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/params"
 )
 
 // +kubebuilder:object:generate:=true

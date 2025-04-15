@@ -4,16 +4,16 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/multilineparser"
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/parser"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/multilineparser"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/parser"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins"
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/custom"
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/filter"
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/input"
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/output"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/custom"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/filter"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/input"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/output"
 	. "github.com/onsi/gomega"
 )
 

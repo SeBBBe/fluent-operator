@@ -1,7 +1,7 @@
 ## 3.3.0 / 2025-02-27
 ### Features
 - Add skip empty lines in tail input (#1352) @smallc2009
-- Update the module path to github.com/fluent/fluent-operator/v3 (#1355) @jiuxia211
+- Update the module path to github.com/SeBBBe/fluent-operator/v3 (#1355) @jiuxia211
 - Update fluentd image references (#1357) @reegnz
 - Update fluent-bit to 3.1.8 (#1356) @reegnz
 - Remove influxdb host validation in ClusterOutput (#1363) @smallc2009

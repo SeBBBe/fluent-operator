@@ -1,7 +1,7 @@
 package output
 
 import (
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins"
 )
 
 // The loki output plugin, allows to ingest your records into a Loki service.

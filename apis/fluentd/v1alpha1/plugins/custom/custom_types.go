@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins"
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/params"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/params"
 )
 
 type CustomPlugin struct {

@@ -1,8 +1,8 @@
 package output
 
 import (
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins"
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/params"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/params"
 	. "github.com/onsi/gomega"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

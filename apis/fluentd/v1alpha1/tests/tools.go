@@ -7,11 +7,11 @@ import (
 
 	corev1 "k8s.io/api/core/v1"
 
-	fluentdv1alpha1 "github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1"
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/common"
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/filter"
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/input"
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/output"
+	fluentdv1alpha1 "github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/common"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/filter"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/input"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/output"
 	"sigs.k8s.io/yaml"
 )
 
@@ -27,12 +27,12 @@ metadata:
     app.kubernetes.io/name: fluentd
 spec:
   globalInputs:
-  - forward: 
-      bind: 0.0.0.0                
+  - forward:
+      bind: 0.0.0.0
       port: 24224
   replicas: 1
   image: ghcr.io/fluent/fluent-operator/fluentd:v1.17.1
-  fluentdCfgSelector: 
+  fluentdCfgSelector:
     matchLabels:
       config.fluentd.fluent.io/enabled: "true"
 `
@@ -97,7 +97,7 @@ metadata:
     app.kubernetes.io/name: fluentd
 spec:
   globalInputs:
-  - tail: 
+  - tail:
       tag: "foo.bar"
       path: /var/log/test.log
       emitUnmatchedLines: true
@@ -133,7 +133,7 @@ spec:
       - /var/log/bar
   replicas: 1
   image: ghcr.io/fluent/fluent-operator/fluentd:v1.17.1
-  fluentdCfgSelector: 
+  fluentdCfgSelector:
     matchLabels:
       config.fluentd.fluent.io/enabled: "true"
 `
@@ -147,7 +147,7 @@ metadata:
   labels:
     config.fluentd.fluent.io/enabled: "true"
 spec:
-  watchedNamespaces: 
+  watchedNamespaces:
   - kube-system
   - default
   clusterFilterSelector:
@@ -167,7 +167,7 @@ metadata:
   labels:
     config.fluentd.fluent.io/enabled: "true"
 spec:
-  watchedNamespaces: 
+  watchedNamespaces:
   - kube-system
   - default
   clusterOutputSelector:
@@ -240,8 +240,8 @@ metadata:
   name: fluentd-filter
   labels:
     filter.fluentd.fluent.io/enabled: "true"
-spec: 
-  filters: 
+spec:
+  filters:
   - recordTransformer:
       enableRuby: true
       records:
@@ -258,8 +258,8 @@ metadata:
   namespace: fluent
 labels:
   filter.fluentd.fluent.io/enabled: "true"
-spec: 
-  filters: 
+spec:
+  filters:
   - recordTransformer:
       records:
       - key: loki-tenant
@@ -297,8 +297,8 @@ metadata:
   name: fluentd-output
   labels:
     output.fluentd.fluent.io/enabled: "true"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - stdout: {}
     buffer:
       type: file
@@ -321,8 +321,8 @@ metadata:
   name: fluentd-output
   labels:
     output.fluentd.fluent.io/enabled: "true"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - stdout: {}
     buffer:
       type: memory
@@ -344,8 +344,8 @@ metadata:
   name: fluentd-output-stdout
   labels:
     output.fluentd.fluent.io/enabled: "true"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - stdout: {}
     tag: foo.*
 `
@@ -358,8 +358,8 @@ metadata:
   name: fluentd-output-es
   labels:
     output.fluentd.fluent.io/enabled: "true"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - elasticsearch:
       host: elasticsearch-logging-data.kubesphere-logging-system.svc
       port: 9200
@@ -375,8 +375,8 @@ metadata:
   name: fluentd-output-es
   labels:
     output.fluentd.fluent.io/enabled: "true"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - elasticsearchDataStream:
       host: elasticsearch-logging-data.kubesphere-logging-system.svc
       port: 9200
@@ -443,7 +443,7 @@ metadata:
   namespace: fluent
 labels:
   output.fluentd.fluent.io/enabled: "es"
-spec: 
+spec:
   outputs:
   - copy:
       copyMode: no_copy
@@ -479,7 +479,7 @@ metadata:
   namespace: fluent
 labels:
   output.fluentd.fluent.io/enabled: "es"
-spec: 
+spec:
   outputs:
   - copy:
       copyMode: no_copy
@@ -508,7 +508,7 @@ metadata:
   namespace: fluent
 labels:
   output.fluentd.fluent.io/enabled: "es"
-spec: 
+spec:
   outputs:
   - elasticsearch:
       host: elasticsearch-logging-data.kubesphere-logging-system.svc
@@ -534,7 +534,7 @@ metadata:
   namespace: fluent
 labels:
   output.fluentd.fluent.io/enabled: "es"
-spec: 
+spec:
   outputs:
   - elasticsearch:
       host: elasticsearch-logging-data.kubesphere-logging-system.svc
@@ -552,8 +552,8 @@ metadata:
   name: fluentd-output-opensearch
   labels:
     output.fluentd.fluent.io/enabled: "true"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - opensearch:
       host: opensearch-logging-data.kubesphere-logging-system.svc
       port: 9200
@@ -569,8 +569,8 @@ metadata:
   name: fluentd-output-kafka
   labels:
     output.fluentd.fluent.io/enabled: "true"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - kafka:
       brokers: my-cluster-kafka-bootstrap.default.svc:9091,my-cluster-kafka-bootstrap.default.svc:9092,my-cluster-kafka-bootstrap.default.svc:9093
       useEventTime: true
@@ -584,8 +584,8 @@ metadata:
   name: fluentd-output-loki
   labels:
     output.fluentd.fluent.io/enabled: "true"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - loki:
       url: http://loki-logging-data.kubesphere-logging-system.svc:3100
       extractKubernetesLabels: true
@@ -655,8 +655,8 @@ metadata:
   name: fluentd-output-loki
 labels:
   output.fluentd.fluent.io/enabled: "loki"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - loki:
       url: http://loki-logging-data.kubesphere-logging-system.svc:3100
       extractKubernetesLabels: true
@@ -684,8 +684,8 @@ metadata:
   labels:
     output.fluentd.fluent.io/enabled: "true"
     output.fluentd.fluent.io/role: "log-operator"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - elasticsearch:
       host: elasticsearch-logging-data.kubesphere-logging-system.svc
       port: 9200
@@ -702,8 +702,8 @@ metadata:
   labels:
     output.fluentd.fluent.io/enabled: "true"
     output.fluentd.fluent.io/scope: "cluster"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - elasticsearch:
       host: elasticsearch-logging-data.kubesphere-logging-system.svc
       port: 9200
@@ -719,8 +719,8 @@ metadata:
   labels:
     output.fluentd.fluent.io/scope: "cluster"
     output.fluentd.fluent.io/enabled: "true"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - customPlugin:
       config: |
         <match **>
@@ -759,7 +759,7 @@ metadata:
   namespace: fluent
   labels:
     output.fluentd.fluent.io/enabled: "es"
-spec: 
+spec:
   outputs:
   - copy:
       copyMode: no_copy
@@ -784,7 +784,7 @@ metadata:
   namespace: fluent
   labels:
     output.fluentd.fluent.io/enabled: "es"
-spec: 
+spec:
   outputs:
   - copy:
       copyMode: no_copy
@@ -853,8 +853,8 @@ metadata:
   name: fluentd-output-datadog
   labels:
     output.fluentd.fluent.io/enabled: "true"
-spec: 
-  outputs: 
+spec:
+  outputs:
   - datadog:
       host: http-intake.logs.datadoghq.com
       port: 443
@@ -870,7 +870,7 @@ metadata:
   labels:
     output.fluentd.fluent.io/enabled: "true"
 spec:
-  outputs: 
+  outputs:
   - copy:
       copyMode: no_copy
   - stdout: {}
