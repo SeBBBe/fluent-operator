@@ -13,9 +13,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 
-	fluentbitv1alpha2 "github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2"
-	fluentdv1alpha1 "github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1"
-	"github.com/fluent/fluent-operator/v3/pkg/operator"
+	fluentbitv1alpha2 "github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2"
+	fluentdv1alpha1 "github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1"
+	"github.com/SeBBBe/fluent-operator/v3/pkg/operator"
 )
 
 func (r *FluentBitReconciler) addFinalizer(ctx context.Context, instance *fluentbitv1alpha2.FluentBit) error {

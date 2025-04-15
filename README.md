@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://github.com/fluent/fluent-operator"><img src="docs/images/fluent-operator-icon.svg" alt="banner" width="150px"></a>
+<a href="https://github.com/SeBBBe/fluent-operator"><img src="docs/images/fluent-operator-icon.svg" alt="banner" width="150px"></a>
 </p>
 
 <p align="center">
@@ -7,8 +7,8 @@
 </p>
 
 <p align=center>
-<a href="https://goreportcard.com/report/github.com/fluent/fluent-operator"><img src="https://goreportcard.com/badge/github.com/fluent/fluent-operator" alt="A+"></a>
-<a href="https://github.com/fluent/fluent-operator/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"><img src="https://img.shields.io/github/issues/badges/shields/good%20first%20issue" alt="good first"></a>
+<a href="https://goreportcard.com/report/github.com/SeBBBe/fluent-operator"><img src="https://goreportcard.com/badge/github.com/SeBBBe/fluent-operator" alt="A+"></a>
+<a href="https://github.com/SeBBBe/fluent-operator/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"><img src="https://img.shields.io/github/issues/badges/shields/good%20first%20issue" alt="good first"></a>
 <a href="https://twitter.com/intent/follow?screen_name=KubeSphere"><img src="https://img.shields.io/twitter/follow/KubeSphere?style=social" alt="follow on Twitter"></a>
 <a href="https://fluent-all.slack.com/archives/C02642TE9HR"><img src="https://img.shields.io/badge/Slack-600%2B-blueviolet?logo=slack&amp;logoColor=white"></a>
 
@@ -171,7 +171,7 @@ Helm [does not manage the lifecycle of CRDs](https://helm.sh/docs/chart_best_pra
 chart upgrades will not add or remove CRDs even if they have changed.  During upgrades, users should manually update CRDs:
 
 ```
-wget https://github.com/fluent/fluent-operator/releases/download/<version>/fluent-operator.tgz
+wget https://github.com/SeBBBe/fluent-operator/releases/download/<version>/fluent-operator.tgz
 tar -xf fluent-operator.tgz
 kubectl replace -f fluent-operator/crds
 ```

@@ -33,8 +33,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	"sigs.k8s.io/controller-runtime/pkg/handler"
 
-	fluentdv1alpha1 "github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1"
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins"
+	fluentdv1alpha1 "github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins"
 )
 
 const (

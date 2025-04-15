@@ -7,12 +7,12 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins"
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/filter"
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/input"
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/output"
-	"github.com/fluent/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/params"
-	fluentdRouter "github.com/fluent/fluent-operator/v3/pkg/fluentd/router"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/filter"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/input"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/output"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentd/v1alpha1/plugins/params"
+	fluentdRouter "github.com/SeBBBe/fluent-operator/v3/pkg/fluentd/router"
 )
 
 // +kubebuilder:object:generate=false

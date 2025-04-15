@@ -5,16 +5,16 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins"
-	"github.com/fluent/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/params"
-	"github.com/fluent/fluent-operator/v3/pkg/utils"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins"
+	"github.com/SeBBBe/fluent-operator/v3/apis/fluentbit/v1alpha2/plugins/params"
+	"github.com/SeBBBe/fluent-operator/v3/pkg/utils"
 	"sigs.k8s.io/yaml"
 )
 
 // +kubebuilder:object:generate:=true
 
 // CustomPlugin is used to support filter plugins that are not implemented yet. <br />
-// **For example usage, refer to https://github.com/fluent/fluent-operator/blob/master/docs/best-practice/custom-plugin.md**
+// **For example usage, refer to https://github.com/SeBBBe/fluent-operator/blob/master/docs/best-practice/custom-plugin.md**
 type CustomPlugin struct {
 	// Config holds any unsupported plugins classic configurations,
 	// if ConfigFileFormat is set to yaml, this filed will be ignored

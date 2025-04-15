@@ -12,7 +12,7 @@ appVersion: "3.3.0"
 icon: https://raw.githubusercontent.com/fluent/fluent-operator/master/docs/images/fluent-operator-icon.svg
 home: https://www.fluentd.org/
 sources:
-  - https://github.com/fluent/fluent-operator
+  - https://github.com/SeBBBe/fluent-operator
 maintainers:
   - name: wenchajun
     email: dehaocheng@kubesphere.io

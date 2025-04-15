@@ -5,12 +5,12 @@
 # Set this to containerd or crio if you want to collect CRI format logs
 containerRuntime: docker
 #  If you want to deploy a default Fluent Bit pipeline (including Fluent Bit Input, Filter, and output) to collect Kubernetes logs, you'll need to set the Kubernetes parameter to true
-# see https://github.com/fluent/fluent-operator/tree/master/manifests/logging-stack
+# see https://github.com/SeBBBe/fluent-operator/tree/master/manifests/logging-stack
 Kubernetes: true
 
 operator:
   # The init container is to get the actual storage path of the docker log files so that it can be mounted to collect the logs.
-  # see https://github.com/fluent/fluent-operator/blob/master/manifests/setup/fluent-operator-deployment.yaml#L26
+  # see https://github.com/SeBBBe/fluent-operator/blob/master/manifests/setup/fluent-operator-deployment.yaml#L26
   initcontainer:
     image:
       registry: docker.io
@@ -259,7 +259,7 @@ fluentbit:
   # Configure the output plugin parameter in FluentBit.
   # You can set enable to true to output logs to the specified location.
   output:
-    #  You can find more supported output plugins here: https://github.com/fluent/fluent-operator/tree/master/docs/plugins/fluentbit/output
+    #  You can find more supported output plugins here: https://github.com/SeBBBe/fluent-operator/tree/master/docs/plugins/fluentbit/output
     es:
       enable: false
       host: "<Elasticsearch url like elasticsearch-logging-data.kubesphere-logging-system.svc>"
@@ -308,7 +308,7 @@ fluentbit:
     #          app: "fluentbit"
 
     # Loki fluentbit ClusterOutput, to be encapsulated in fluentbit config
-    # See https://github.com/fluent/fluent-operator/blob/master/docs/plugins/fluentbit/output/loki.md
+    # See https://github.com/SeBBBe/fluent-operator/blob/master/docs/plugins/fluentbit/output/loki.md
     # See https://docs.fluentbit.io/manual/pipeline/outputs/loki
     loki:
       # Switch for generation of fluentbit loki ClusterOutput (and loki basic auth http user and pass secrets if required)
@@ -393,8 +393,8 @@ fluentbit:
       annotations: false
     containerd:
       # This is customized lua containerd log format converter, you can refer here:
-      # https://github.com/fluent/fluent-operator/blob/master/charts/fluent-operator/templates/fluentbit-clusterfilter-containerd.yaml
-      # https://github.com/fluent/fluent-operator/blob/master/charts/fluent-operator/templates/fluentbit-containerd-config.yaml
+      # https://github.com/SeBBBe/fluent-operator/blob/master/charts/fluent-operator/templates/fluentbit-clusterfilter-containerd.yaml
+      # https://github.com/SeBBBe/fluent-operator/blob/master/charts/fluent-operator/templates/fluentbit-containerd-config.yaml
       enable: true
     systemd:
       enable: true
