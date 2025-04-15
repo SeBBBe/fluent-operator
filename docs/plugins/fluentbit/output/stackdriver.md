@@ -23,7 +23,10 @@ Stackdriver is the Stackdriver output plugin, allows you to ingest your records 
 | logNameKey | The value of this field is set as the logName field in Stackdriver | string |
 | tagPrefix | Used to validate the tags of logs that when the Resource is k8s_container, k8s_node, or k8s_pod | string |
 | severityKey | Specify the key that contains the severity information for the logs | string |
+| projectIdKey | The value of this field is used by the Stackdriver output plugin to find the gcp project id from jsonPayload | string |
 | autoformatStackdriverTrace | Rewrite the trace field to be formatted for use with GCP Cloud Trace | *bool |
 | workers | Number of dedicated threads for the Stackdriver Output Plugin | *int32 |
 | customK8sRegex | A custom regex to extract fields from the local_resource_id of the logs | string |
 | resourceLabels | Optional list of comma seperated strings. Setting these fields overrides the Stackdriver monitored resource API values | []string |
+| compress | Set payload compression mechanism. The only available option is gzip. Default = \"\", which means no compression. | string |
+| cloudLoggingBaseUrl | Set the base Cloud Logging API URL to use for the /v2/entries:write API request | string |
